@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy all project files except best.pt
 COPY . /app/
 
+# Ensure the static folder exists
+RUN mkdir -p /app/static/uploads /app/static/detected
+
 # Remove best.pt if it exists
 RUN rm -f /app/best.pt
 
